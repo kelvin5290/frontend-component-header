@@ -33,7 +33,7 @@ const LearningHeader = ({
   const headerLogo = (
     <LinkedLogo
       className="logo"
-      href={`${getConfig().LMS_BASE_URL}/dashboard`}
+      href={`${getConfig().LMS_BASE_URL}`}
       src={getConfig().LOGO_URL}
       alt={getConfig().SITE_NAME}
     />
@@ -45,7 +45,7 @@ const LearningHeader = ({
       <div className="container-xl py-2 d-flex align-items-center">
         {headerLogo}
         <div className="flex-grow-1 course-title-lockup" style={{ lineHeight: 1 }}>
-          <span className="d-block small m-0">{courseOrg} {courseNumber}</span>
+          <span className="d-block small m-0">{courseOrg}</span>
           <span className="d-block m-0 font-weight-bold course-title">{courseTitle}</span>
         </div>
         {showUserDropdown && authenticatedUser && (
