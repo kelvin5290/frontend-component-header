@@ -1,0 +1,15 @@
+var siteLanguageList = [{
+  code: 'en',
+  name: 'English',
+  released: true
+}, {
+  code: 'zh-cn',
+  name: '中文 (简体)',
+  released: true
+}, {
+  code: 'zh-hk',
+  name: '中文 (繁體)',
+  released: true
+}];
+export default siteLanguageList;
+//# sourceMappingURL=constants.js.map
