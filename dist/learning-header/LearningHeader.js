@@ -132,7 +132,7 @@ var LearningHeader = function LearningHeader(_ref3) {
     onChange: function onChange(e) {
       handleChange(e);
     },
-    name: intl.formatMessage(messages.language),
+    name: messages.language,
     as: "select",
     floatingLabel: "Language"
   }, siteLanguageList.map(function (_ref4) {
