@@ -20,6 +20,7 @@ import { publish } from '@edx/frontend-platform';
 import { convertKeyNames, snakeCaseObject } from '@edx/frontend-platform/utils';
 import { getLocale, handleRtl, LOCALE_CHANGED } from '@edx/frontend-platform/i18n';
 import siteLanguageList from '../site-language/constants';
+import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 var LinkedLogo = function LinkedLogo(_ref) {
   var href = _ref.href,
     src = _ref.src,
@@ -132,10 +133,12 @@ var LearningHeader = function LearningHeader(_ref3) {
     onChange: function onChange(e) {
       handleChange(e);
     },
-    name: messages.language,
+    name: intl.formatMessage(messages.language),
     as: "select",
     floatingLabel: "Language"
-  }, siteLanguageList.map(function (_ref4) {
+  }, /*#__PURE__*/React.createElement("option", {
+    value: ""
+  }, intl.formatMessage(messages.language)), siteLanguageList.map(function (_ref4) {
     var code = _ref4.code,
       name = _ref4.name;
     return /*#__PURE__*/React.createElement("option", {

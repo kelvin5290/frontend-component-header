@@ -12,6 +12,7 @@ import { publish } from '@edx/frontend-platform';
 import { convertKeyNames, snakeCaseObject } from '@edx/frontend-platform/utils';
 import { getLocale, handleRtl, LOCALE_CHANGED } from '@edx/frontend-platform/i18n';
 import siteLanguageList from '../site-language/constants'
+import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 const LinkedLogo = ({
   href,
   src,
@@ -81,7 +82,8 @@ const LearningHeader = ({
           <span className="d-block m-0 font-weight-bold course-title">{courseTitle}</span>
         </div>
         <Form.Group controlId="language" className='mt-3'>
-        <Form.Control id='language' onChange={(e)=>{handleChange(e)}}  name={messages.language}  as="select" floatingLabel="Language">
+        <Form.Control id='language' onChange={(e)=>{handleChange(e)}}  name={intl.formatMessage(messages.language)}  as="select" floatingLabel="Language">
+        <option  value=''>{intl.formatMessage(messages.language)}</option>
        { siteLanguageList.map(({ code, name }) => (<option  value={code}>{name}</option>))}
           </Form.Control>
           </Form.Group>
