@@ -122,8 +122,6 @@ var LearningHeader = function LearningHeader(_ref3) {
       lineHeight: 1
     }
   }, /*#__PURE__*/React.createElement("span", {
-    className: "d-block small m-0"
-  }, courseOrg), /*#__PURE__*/React.createElement("span", {
     className: "d-block m-0 font-weight-bold course-title"
   }, courseTitle)), /*#__PURE__*/React.createElement(Form.Group, {
     controlId: "language",
