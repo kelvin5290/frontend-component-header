@@ -89,7 +89,7 @@ const LearningHeader = ({
           </Form.Group>
         {showUserDropdown && authenticatedUser && (
         <AuthenticatedUserDropdown
-          username={authenticatedUser.username}
+          username={authenticatedUser.email}
         />
         )}
         {showUserDropdown && !authenticatedUser && (

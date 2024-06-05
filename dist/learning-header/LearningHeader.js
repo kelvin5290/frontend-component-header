@@ -143,7 +143,7 @@ var LearningHeader = function LearningHeader(_ref3) {
       value: code
     }, name);
   }))), showUserDropdown && authenticatedUser && /*#__PURE__*/React.createElement(AuthenticatedUserDropdown, {
-    username: authenticatedUser.username
+    username: authenticatedUser.email
   }), showUserDropdown && !authenticatedUser && /*#__PURE__*/React.createElement(AnonymousUserMenu, null)));
 };
 LearningHeader.propTypes = {
