@@ -128,6 +128,7 @@ var LearningHeader = function LearningHeader(_ref3) {
     className: "mt-3"
   }, /*#__PURE__*/React.createElement(Form.Control, {
     id: "language",
+    values: getLocale(),
     onChange: function onChange(e) {
       handleChange(e);
     },
