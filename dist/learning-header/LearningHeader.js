@@ -109,7 +109,7 @@ var LearningHeader = function LearningHeader(_ref3) {
     src: getConfig().LOGO_URL,
     alt: getConfig().SITE_NAME
   });
-  console.log(getLocale());
+  // console.log(getLocale())
   return /*#__PURE__*/React.createElement("header", {
     className: "learning-header"
   }, /*#__PURE__*/React.createElement("a", {
@@ -129,7 +129,7 @@ var LearningHeader = function LearningHeader(_ref3) {
     className: "mt-3"
   }, /*#__PURE__*/React.createElement(Form.Control, {
     id: "language",
-    values: getLocale(),
+    value: getLocale(),
     onChange: function onChange(e) {
       handleChange(e);
     },
