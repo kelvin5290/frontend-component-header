@@ -47,12 +47,14 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
           content = menuItem.content,
           submenuContent = menuItem.submenuContent,
           disabled = menuItem.disabled,
-          isActive = menuItem.isActive;
+          isActive = menuItem.isActive,
+          onClick = menuItem.onClick;
         if (type === 'item') {
           return /*#__PURE__*/React.createElement("a", {
             key: "".concat(type, "-").concat(content),
             className: "nav-link".concat(disabled ? ' disabled' : '').concat(isActive ? ' active' : ''),
-            href: href
+            href: href,
+            onClick: onClick || null
           }, content);
         }
         return /*#__PURE__*/React.createElement(Menu, {
@@ -60,6 +62,7 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
           tag: "div",
           className: "nav-item"
         }, /*#__PURE__*/React.createElement(MenuTrigger, {
+          onClick: onClick || null,
           tag: "a",
           role: "button",
           tabIndex: "0",
@@ -91,13 +94,15 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
             content = _ref.content,
             href = _ref.href,
             disabled = _ref.disabled,
-            isActive = _ref.isActive;
+            isActive = _ref.isActive,
+            onClick = _ref.onClick;
           return /*#__PURE__*/React.createElement("li", {
             className: "nav-item",
             key: "".concat(type, "-").concat(content)
           }, /*#__PURE__*/React.createElement("a", {
             className: "nav-link".concat(isActive ? ' active' : '').concat(disabled ? ' disabled' : ''),
-            href: href
+            href: href,
+            onClick: onClick || null
           }, content));
         });
       });
@@ -209,7 +214,8 @@ MobileHeader.propTypes = {
       type: PropTypes.oneOf(['item', 'menu']),
       href: PropTypes.string,
       content: PropTypes.string,
-      isActive: PropTypes.bool
+      isActive: PropTypes.bool,
+      onClick: PropTypes.func
     }))
   })),
   loggedOutItems: PropTypes.arrayOf(PropTypes.shape({

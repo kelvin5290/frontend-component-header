@@ -39,6 +39,7 @@ LinkedLogo.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired
 };
+console.log(getLocale());
 var handleChange = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
     var requestConfig, _getAuthenticatedUser, username, userId, processedParams, formData;

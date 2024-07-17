@@ -47,12 +47,14 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
           content = menuItem.content,
           submenuContent = menuItem.submenuContent,
           disabled = menuItem.disabled,
-          isActive = menuItem.isActive;
+          isActive = menuItem.isActive,
+          onClick = menuItem.onClick;
         if (type === 'item') {
           return /*#__PURE__*/React.createElement("a", {
             key: "".concat(type, "-").concat(content),
             className: "nav-link".concat(disabled ? ' disabled' : '').concat(isActive ? ' active' : ''),
-            href: href
+            href: href,
+            onClick: onClick || null
           }, content);
         }
         return /*#__PURE__*/React.createElement(Menu, {
@@ -61,6 +63,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
           className: "nav-item",
           respondToPointerEvents: true
         }, /*#__PURE__*/React.createElement(MenuTrigger, {
+          onClick: onClick || null,
           tag: "a",
           className: "nav-link d-inline-flex align-items-center",
           href: href
@@ -128,11 +131,13 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
               content = _ref.content,
               href = _ref.href,
               disabled = _ref.disabled,
-              isActive = _ref.isActive;
+              isActive = _ref.isActive,
+              onClick = _ref.onClick;
             return /*#__PURE__*/React.createElement("a", {
               className: "dropdown-".concat(type).concat(isActive ? ' active' : '').concat(disabled ? ' disabled' : ''),
               key: "".concat(type, "-").concat(content),
-              href: href
+              href: href,
+              onClick: onClick || null
             }, content);
           }), index < userMenu.length - 1 && /*#__PURE__*/React.createElement("div", {
             className: "dropdown-divider",
@@ -202,7 +207,8 @@ DesktopHeader.propTypes = {
       type: PropTypes.oneOf(['item', 'menu']),
       href: PropTypes.string,
       content: PropTypes.string,
-      isActive: PropTypes.bool
+      isActive: PropTypes.bool,
+      onClick: PropTypes.func
     }))
   })),
   loggedOutItems: PropTypes.arrayOf(PropTypes.shape({
