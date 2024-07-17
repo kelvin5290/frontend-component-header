@@ -29,7 +29,7 @@ LinkedLogo.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
 };
-console.log(getLocale())
+
 const handleChange = async (e) => {
   e.preventDefault();
   const requestConfig = { headers: { 'Content-Type': 'application/merge-patch+json' } };
@@ -72,7 +72,7 @@ const LearningHeader = ({
       alt={getConfig().SITE_NAME}
     />
   );
-
+  console.log(getLocale())
   return (
     <header className="learning-header">
       <a className="sr-only sr-only-focusable" href="#main-content">{intl.formatMessage(messages.skipNavLink)}</a>

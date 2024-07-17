@@ -39,7 +39,6 @@ LinkedLogo.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired
 };
-console.log(getLocale());
 var handleChange = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
     var requestConfig, _getAuthenticatedUser, username, userId, processedParams, formData;
@@ -110,6 +109,7 @@ var LearningHeader = function LearningHeader(_ref3) {
     src: getConfig().LOGO_URL,
     alt: getConfig().SITE_NAME
   });
+  console.log(getLocale());
   return /*#__PURE__*/React.createElement("header", {
     className: "learning-header"
   }, /*#__PURE__*/React.createElement("a", {
