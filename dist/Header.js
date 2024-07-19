@@ -1,9 +1,3 @@
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 import React, { useContext } from 'react';
 import Responsive from 'react-responsive';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
@@ -54,23 +48,28 @@ var Header = function Header(_ref) {
       type: 'item',
       href: "".concat(config.LMS_BASE_URL, "/dashboard"),
       content: intl.formatMessage(messages['header.user.menu.dashboard'])
-    }, {
-      type: 'item',
-      href: "".concat(config.ACCOUNT_PROFILE_URL, "/u/").concat(authenticatedUser.username),
-      content: intl.formatMessage(messages['header.user.menu.profile'])
-    }, {
-      type: 'item',
-      href: config.ACCOUNT_SETTINGS_URL,
-      content: intl.formatMessage(messages['header.user.menu.account.settings'])
-    }].concat(_toConsumableArray(config.ORDER_HISTORY_URL ? [{
-      type: 'item',
-      href: config.ORDER_HISTORY_URL,
-      content: intl.formatMessage(messages['header.user.menu.order.history'])
-    }] : []), [{
+    },
+    // {
+    //   type: 'item',
+    //   href: `${config.ACCOUNT_PROFILE_URL}/u/${authenticatedUser.username}`,
+    //   content: intl.formatMessage(messages['header.user.menu.profile']),
+    // },
+    // {
+    //   type: 'item',
+    //   href: config.ACCOUNT_SETTINGS_URL,
+    //   content: intl.formatMessage(messages['header.user.menu.account.settings']),
+    // },
+    // // Users should only see Order History if have a ORDER_HISTORY_URL define in the environment.
+    // ...(config.ORDER_HISTORY_URL ? [{
+    //   type: 'item',
+    //   href: config.ORDER_HISTORY_URL,
+    //   content: intl.formatMessage(messages['header.user.menu.order.history']),
+    // }] : []),
+    {
       type: 'item',
       href: config.LOGOUT_URL,
       content: intl.formatMessage(messages['header.user.menu.logout'])
-    }])
+    }]
   }];
   var mainMenu = mainMenuItems || defaultMainMenu;
   var secondaryMenu = secondaryMenuItems || [];
@@ -79,11 +78,13 @@ var Header = function Header(_ref) {
     type: 'item',
     href: config.LOGIN_URL,
     content: intl.formatMessage(messages['header.user.menu.login'])
-  }, {
-    type: 'item',
-    href: "".concat(config.LMS_BASE_URL, "/register"),
-    content: intl.formatMessage(messages['header.user.menu.register'])
-  }];
+  }
+  // {
+  //   type: 'item',
+  //   href: `${config.LMS_BASE_URL}/register`,
+  //   content: intl.formatMessage(messages['header.user.menu.register']),
+  // },
+  ];
   var props = {
     logo: config.LOGO_URL,
     logoAltText: config.SITE_NAME,
