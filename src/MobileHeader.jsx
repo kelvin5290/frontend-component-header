@@ -134,7 +134,7 @@ class MobileHeader extends React.Component {
         {mainMenu.length > 0 ? (
           <div className="w-100 d-flex justify-content-start">
 
-            <Menu className="position-static">
+            {/* <Menu className="position-static">
               <MenuTrigger
                 tag="button"
                 className="icon-button"
@@ -151,7 +151,7 @@ class MobileHeader extends React.Component {
                 {this.renderMainMenu()}
                 {this.renderSecondaryMenu()}
               </MenuContent>
-            </Menu>
+            </Menu> */}
           </div>
         ) : null}
         <div className={`w-100 d-flex ${logoClasses}`}>

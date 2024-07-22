@@ -154,26 +154,7 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
         href: "#main"
       }, intl.formatMessage(messages['header.label.skip.nav'])), mainMenu.length > 0 ? /*#__PURE__*/React.createElement("div", {
         className: "w-100 d-flex justify-content-start"
-      }, /*#__PURE__*/React.createElement(Menu, {
-        className: "position-static"
-      }, /*#__PURE__*/React.createElement(MenuTrigger, {
-        tag: "button",
-        className: "icon-button",
-        "aria-label": intl.formatMessage(messages['header.label.main.menu']),
-        title: intl.formatMessage(messages['header.label.main.menu'])
-      }, /*#__PURE__*/React.createElement(MenuIcon, {
-        role: "img",
-        "aria-hidden": true,
-        focusable: "false",
-        style: {
-          width: '1.5rem',
-          height: '1.5rem'
-        }
-      })), /*#__PURE__*/React.createElement(MenuContent, {
-        tag: "nav",
-        "aria-label": intl.formatMessage(messages['header.label.main.nav']),
-        className: "nav flex-column pin-left pin-right border-top shadow py-2"
-      }, this.renderMainMenu(), this.renderSecondaryMenu()))) : null, /*#__PURE__*/React.createElement("div", {
+      }) : null, /*#__PURE__*/React.createElement("div", {
         className: "w-100 d-flex ".concat(logoClasses)
       }, logoDestination === null ? /*#__PURE__*/React.createElement(Logo, {
         className: "logo",
