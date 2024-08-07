@@ -135,7 +135,7 @@ var LearningHeader = function LearningHeader(_ref3) {
     },
     name: intl.formatMessage(messages.language),
     as: "select",
-    floatingLabel: "Language"
+    floatingLabel: intl.formatMessage(messages.language)
   }, siteLanguageList.map(function (_ref4) {
     var code = _ref4.code,
       name = _ref4.name;

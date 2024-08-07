@@ -83,7 +83,7 @@ const LearningHeader = ({
           <span className="d-block m-0 font-weight-bold course-title">{courseTitle}</span>
         </div>
         <Form.Group controlId="language" className='mt-3'>
-        <Form.Control id='language' value={getLocale()} onChange={(e)=>{handleChange(e)}}  name={intl.formatMessage(messages.language)}  as="select" floatingLabel="Language">
+        <Form.Control id='language' value={getLocale()} onChange={(e)=>{handleChange(e)}}  name={intl.formatMessage(messages.language)}  as="select" floatingLabel={intl.formatMessage(messages.language)}>
         
        { siteLanguageList.map(({ code, name }) => (<option  value={code}>{name}</option>))}
           </Form.Control>
