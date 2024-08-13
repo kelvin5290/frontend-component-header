@@ -16,7 +16,7 @@ var Logo = function Logo(_ref) {
     src: src,
     alt: alt
   }, attributes)), userDomain && /*#__PURE__*/React.createElement("img", {
-    className: "ml-2",
+    className: "logo ml-2",
     onError: function onError(i) {
       return i.target.src = '';
     },
@@ -38,11 +38,11 @@ var LinkedLogo = function LinkedLogo(_ref2) {
   }, attributes, {
     className: "mx-auto d-flex flex-row"
   }), /*#__PURE__*/React.createElement("img", {
-    className: "d-block",
+    className: "logo",
     src: src,
     alt: alt
   }), userDomain && /*#__PURE__*/React.createElement("img", _extends({
-    className: "ml-2",
+    className: "logo ml-2",
     onError: function onError(ev) {
       ev.style.display = 'none';
     },

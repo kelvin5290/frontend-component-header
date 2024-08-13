@@ -6,7 +6,7 @@ const Logo = ({ src, alt, userDomain, ...attributes }) => (
   <img src={src} alt={alt} {...attributes} />
   {userDomain && (
     <img
-      className="ml-2"
+      className="logo ml-2"
       onError={i => i.target.src=''}
       src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
     />
@@ -27,10 +27,10 @@ const LinkedLogo = ({
   ...attributes
 }) => (
   <a href={href} {...attributes} className="mx-auto d-flex flex-row">
-    <img className="d-block" src={src} alt={alt} />
+    <img className="logo" src={src} alt={alt} />
     {userDomain && (
     <img
-      className="ml-2"
+      className="logo ml-2"
       onError={(ev)=>{ev.style.display = 'none'}}
       src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
       alt={alt}

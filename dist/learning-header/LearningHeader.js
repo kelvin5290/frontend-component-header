@@ -28,16 +28,16 @@ var LinkedLogo = function LinkedLogo(_ref) {
     attributes = _objectWithoutProperties(_ref, _excluded);
   return /*#__PURE__*/React.createElement("a", {
     href: href,
-    className: "d-flex flex-row logo"
+    className: "d-flex flex-row"
   }, /*#__PURE__*/React.createElement("img", {
-    className: "d-block",
+    className: "logo d-block",
     src: src,
     alt: alt
   }), userDomain && /*#__PURE__*/React.createElement("img", {
     onError: function onError(i) {
       return i.target.src = '';
     },
-    className: "ml-2",
+    className: "logo ml-2",
     src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png")
   }));
 };
