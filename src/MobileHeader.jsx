@@ -124,7 +124,7 @@ class MobileHeader extends React.Component {
     const logoProps = { src: logo, alt: logoAltText, href: logoDestination };
     const stickyClassName = stickyOnMobile ? 'sticky-top' : '';
     const logoClasses = getConfig().AUTHN_MINIMAL_HEADER ? 'justify-content-left pl-3' : 'justify-content-center';
-
+    const userDomain = username.split('@')[1].replace(".", '_')
     return (
       <header
         aria-label={intl.formatMessage(messages['header.label.main.header'])}
@@ -155,7 +155,7 @@ class MobileHeader extends React.Component {
           </div>
         ) : null}
         <div className={`w-100 d-flex ${logoClasses}`}>
-          { logoDestination === null ? <Logo className="logo" src={logo} alt={logoAltText} /> : <LinkedLogo className="logo" {...logoProps} itemType="http://schema.org/Organization" />}
+          { logoDestination === null ? <Logo className="logo" src={logo} userDomain={userDomain} alt={logoAltText} /> : <LinkedLogo className="logo" userDomain={userDomain} {...logoProps} itemType="http://schema.org/Organization" />}
         </div>
         {userMenu.length > 0 || loggedOutItems.length > 0 ? (
           <div className="w-100 d-flex justify-content-end align-items-center">

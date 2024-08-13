@@ -17,11 +17,20 @@ const LinkedLogo = ({
   href,
   src,
   alt,
+  userDomain,
   ...attributes
 }) => (
   <a href={href} {...attributes}>
     <img className="d-block" src={src} alt={alt} />
+    {userDomain && (
+    <img
+      src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
+      alt={alt}
+      {...attributes}
+    />
+  )}
   </a>
+  
 );
 
 LinkedLogo.propTypes = {
@@ -63,10 +72,11 @@ const LearningHeader = ({
   courseOrg, courseNumber, courseTitle, intl, showUserDropdown,
 }) => {
   const { authenticatedUser } = useContext(AppContext);
-
+  const userDomain = authenticatedUser.email.split('@')[1].replace(".", '_')
   const headerLogo = (
     <LinkedLogo
       className="logo"
+      userDomain={userDomain}
       href={`${getConfig().LMS_BASE_URL}`}
       src={getConfig().LOGO_URL}
       alt={getConfig().SITE_NAME}

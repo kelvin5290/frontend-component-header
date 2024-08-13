@@ -146,6 +146,7 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
       };
       var stickyClassName = stickyOnMobile ? 'sticky-top' : '';
       var logoClasses = getConfig().AUTHN_MINIMAL_HEADER ? 'justify-content-left pl-3' : 'justify-content-center';
+      var userDomain = username.split('@')[1].replace(".", '_');
       return /*#__PURE__*/React.createElement("header", {
         "aria-label": intl.formatMessage(messages['header.label.main.header']),
         className: "site-header-mobile d-flex justify-content-between align-items-center shadow ".concat(stickyClassName)
@@ -178,9 +179,11 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
       }, logoDestination === null ? /*#__PURE__*/React.createElement(Logo, {
         className: "logo",
         src: logo,
+        userDomain: userDomain,
         alt: logoAltText
       }) : /*#__PURE__*/React.createElement(LinkedLogo, _extends({
-        className: "logo"
+        className: "logo",
+        userDomain: userDomain
       }, logoProps, {
         itemType: "http://schema.org/Organization"
       }))), userMenu.length > 0 || loggedOutItems.length > 0 ? /*#__PURE__*/React.createElement("div", {

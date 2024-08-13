@@ -1,8 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Logo = ({ src, alt, ...attributes }) => (
+const Logo = ({ src, alt, userDomain, ...attributes }) => (
+  <>
   <img src={src} alt={alt} {...attributes} />
+  {userDomain && (
+    <img
+      src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
+      alt={alt}
+      {...attributes}
+    />
+  )}
+</>
 );
 
 Logo.propTypes = {
@@ -14,11 +23,20 @@ const LinkedLogo = ({
   href,
   src,
   alt,
+  userDomain,
   ...attributes
 }) => (
   <a href={href} {...attributes}>
     <img className="d-block" src={src} alt={alt} />
+    {userDomain && (
+    <img
+      src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
+      alt={alt}
+      {...attributes}
+    />
+  )}
   </a>
+  
 );
 
 LinkedLogo.propTypes = {
