@@ -20,10 +20,11 @@ const LinkedLogo = ({
   userDomain,
   ...attributes
 }) => (
-  <a href={href} {...attributes}>
+  <a href={href} className="d-flex flex-row" {...attributes}>
     <img className="d-block" src={src} alt={alt} />
     {userDomain && (
     <img
+      onError={(ev)=>{ev.style.display = 'none'}}
       src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
       alt={alt}
       {...attributes}

@@ -28,12 +28,16 @@ var LinkedLogo = function LinkedLogo(_ref) {
     userDomain = _ref.userDomain,
     attributes = _objectWithoutProperties(_ref, _excluded);
   return /*#__PURE__*/React.createElement("a", _extends({
-    href: href
+    href: href,
+    className: "d-flex flex-row"
   }, attributes), /*#__PURE__*/React.createElement("img", {
     className: "d-block",
     src: src,
     alt: alt
   }), userDomain && /*#__PURE__*/React.createElement("img", _extends({
+    onError: function onError(ev) {
+      ev.style.display = 'none';
+    },
     src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png"),
     alt: alt
   }, attributes)));
