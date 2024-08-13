@@ -17,8 +17,8 @@ var Logo = function Logo(_ref) {
     alt: alt
   }, attributes)), userDomain && /*#__PURE__*/React.createElement("img", _extends({
     className: "ml-2",
-    onError: function onError(ev) {
-      ev.style.display = 'none';
+    onError: function onError(i) {
+      return i.target.src = '';
     },
     src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png"),
     alt: alt

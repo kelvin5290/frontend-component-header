@@ -7,7 +7,7 @@ const Logo = ({ src, alt, userDomain, ...attributes }) => (
   {userDomain && (
     <img
       className="ml-2"
-      onError={(ev)=>{ev.style.display = 'none'}}
+      onError={i => i.target.src=''}
       src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
       alt={alt}
       {...attributes}
