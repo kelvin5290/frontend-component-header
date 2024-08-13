@@ -10,10 +10,13 @@ var Logo = function Logo(_ref) {
     alt = _ref.alt,
     userDomain = _ref.userDomain,
     attributes = _objectWithoutProperties(_ref, _excluded);
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("img", _extends({
+  return /*#__PURE__*/React.createElement("div", {
+    className: "mx-auto d-flex flex-row"
+  }, /*#__PURE__*/React.createElement("img", _extends({
     src: src,
     alt: alt
   }, attributes)), userDomain && /*#__PURE__*/React.createElement("img", _extends({
+    className: "ml-2",
     src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png"),
     alt: alt
   }, attributes)));
@@ -30,11 +33,17 @@ var LinkedLogo = function LinkedLogo(_ref2) {
     attributes = _objectWithoutProperties(_ref2, _excluded2);
   return /*#__PURE__*/React.createElement("a", _extends({
     href: href
-  }, attributes), /*#__PURE__*/React.createElement("img", {
+  }, attributes, {
+    className: "mx-auto d-flex flex-row"
+  }), /*#__PURE__*/React.createElement("img", {
     className: "d-block",
     src: src,
     alt: alt
   }), userDomain && /*#__PURE__*/React.createElement("img", _extends({
+    className: "ml-2",
+    onError: function onError(ev) {
+      ev.style.display = 'none';
+    },
     src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png"),
     alt: alt
   }, attributes)));
