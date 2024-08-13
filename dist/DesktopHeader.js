@@ -166,7 +166,6 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
         logoAltText = _this$props2.logoAltText,
         logoDestination = _this$props2.logoDestination,
         loggedIn = _this$props2.loggedIn,
-        username = _this$props2.username,
         intl = _this$props2.intl;
       var logoProps = {
         src: logo,
@@ -174,7 +173,6 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
         href: logoDestination
       };
       var logoClasses = getConfig().AUTHN_MINIMAL_HEADER ? 'mw-100' : null;
-      var userDomain = username.split('@')[1].replace(".", '_');
       return /*#__PURE__*/React.createElement("header", {
         className: "site-header-desktop"
       }, /*#__PURE__*/React.createElement("a", {
@@ -187,13 +185,10 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
       }, logoDestination === null ? /*#__PURE__*/React.createElement(Logo, {
         className: "logo",
         src: logo,
-        alt: logoAltText,
-        userDomain: userDomain
+        alt: logoAltText
       }) : /*#__PURE__*/React.createElement(LinkedLogo, _extends({
         className: "logo"
-      }, logoProps, {
-        userDomain: userDomain
-      })), /*#__PURE__*/React.createElement("nav", {
+      }, logoProps)), /*#__PURE__*/React.createElement("nav", {
         "aria-label": intl.formatMessage(messages['header.label.main.nav']),
         className: "nav main-nav"
       }, this.renderMainMenu()), /*#__PURE__*/React.createElement("nav", {
