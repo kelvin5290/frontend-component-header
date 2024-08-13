@@ -9,8 +9,6 @@ const Logo = ({ src, alt, userDomain, ...attributes }) => (
       className="ml-2"
       onError={i => i.target.src=''}
       src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
-      alt={alt}
-      {...attributes}
     />
   )}
 </div>

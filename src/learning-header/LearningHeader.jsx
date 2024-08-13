@@ -27,8 +27,6 @@ const LinkedLogo = ({
       onError={i => i.target.src=''}
       className="ml-2"
       src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
-      alt={alt}
-      {...attributes}
     />
   )}
   </a>

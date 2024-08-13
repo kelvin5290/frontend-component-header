@@ -15,14 +15,13 @@ var Logo = function Logo(_ref) {
   }, /*#__PURE__*/React.createElement("img", _extends({
     src: src,
     alt: alt
-  }, attributes)), userDomain && /*#__PURE__*/React.createElement("img", _extends({
+  }, attributes)), userDomain && /*#__PURE__*/React.createElement("img", {
     className: "ml-2",
     onError: function onError(i) {
       return i.target.src = '';
     },
-    src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png"),
-    alt: alt
-  }, attributes)));
+    src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png")
+  }));
 };
 Logo.propTypes = {
   src: PropTypes.string.isRequired,
