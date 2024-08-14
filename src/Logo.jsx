@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Logo = ({ src, alt, userDomain, ...attributes }) => (
-  <div  className="mx-auto d-flex flex-row"> 
+  <div  className="d-flex flex-row"> 
   <img src={src} alt={alt} {...attributes} />
   {userDomain && (
     <img
@@ -26,15 +26,13 @@ const LinkedLogo = ({
   userDomain,
   ...attributes
 }) => (
-  <a href={href} {...attributes} className="mx-auto d-flex flex-row">
+  <a href={href} {...attributes} className="d-flex flex-row">
     <img className="logo" src={src} alt={alt} />
     {userDomain && (
     <img
       className="logo ml-2"
-      onError={(ev)=>{ev.style.display = 'none'}}
+      onError={i => i.target.src=''}
       src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
-      alt={alt}
-      {...attributes}
     />
   )}
   </a>

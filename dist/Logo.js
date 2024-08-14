@@ -11,7 +11,7 @@ var Logo = function Logo(_ref) {
     userDomain = _ref.userDomain,
     attributes = _objectWithoutProperties(_ref, _excluded);
   return /*#__PURE__*/React.createElement("div", {
-    className: "mx-auto d-flex flex-row"
+    className: "d-flex flex-row"
   }, /*#__PURE__*/React.createElement("img", _extends({
     src: src,
     alt: alt
@@ -36,19 +36,18 @@ var LinkedLogo = function LinkedLogo(_ref2) {
   return /*#__PURE__*/React.createElement("a", _extends({
     href: href
   }, attributes, {
-    className: "mx-auto d-flex flex-row"
+    className: "d-flex flex-row"
   }), /*#__PURE__*/React.createElement("img", {
     className: "logo",
     src: src,
     alt: alt
-  }), userDomain && /*#__PURE__*/React.createElement("img", _extends({
+  }), userDomain && /*#__PURE__*/React.createElement("img", {
     className: "logo ml-2",
-    onError: function onError(ev) {
-      ev.style.display = 'none';
+    onError: function onError(i) {
+      return i.target.src = '';
     },
-    src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png"),
-    alt: alt
-  }, attributes)));
+    src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png")
+  }));
 };
 LinkedLogo.propTypes = {
   href: PropTypes.string.isRequired,
