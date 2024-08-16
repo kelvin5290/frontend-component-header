@@ -229,7 +229,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
       }, this.renderMainMenu()), /*#__PURE__*/React.createElement("nav", {
         "aria-label": intl.formatMessage(messages['header.label.secondary.nav']),
         className: "nav secondary-menu-container align-items-center ml-auto"
-      }, loggedIn ? /*#__PURE__*/React.createElement(React.Fragment, null, this.renderSecondaryMenu(), this.renderUserMenu(), /*#__PURE__*/React.createElement(Form.Group, {
+      }, loggedIn ? /*#__PURE__*/React.createElement(React.Fragment, null, this.renderSecondaryMenu(), /*#__PURE__*/React.createElement(Form.Group, {
         controlId: "language",
         className: "mt-3"
       }, /*#__PURE__*/React.createElement(Form.Control, {
@@ -238,16 +238,18 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
         onChange: function onChange(e) {
           handleChange(e);
         },
-        name: intl.formatMessage(messages.language),
+        name: intl.formatMessage(messages["language"]),
         as: "select",
-        floatingLabel: intl.formatMessage(messages.language)
+        floatingLabel: intl.formatMessage(messages["language"])
       }, siteLanguageList.map(function (_ref3) {
         var code = _ref3.code,
           name = _ref3.name;
         return /*#__PURE__*/React.createElement("option", {
           value: code
         }, name);
-      })))) : this.renderLoggedOutItems()))));
+      }))), /*#__PURE__*/React.createElement("div", {
+        className: "ml-3"
+      }, this.renderUserMenu())) : this.renderLoggedOutItems()))));
     }
   }]);
 }(React.Component);

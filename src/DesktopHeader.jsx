@@ -171,13 +171,16 @@ class DesktopHeader extends React.Component {
                 ? (
                   <>
                     {this.renderSecondaryMenu()}
-                    {this.renderUserMenu()}
                     <Form.Group controlId="language" className='mt-3'>
-                      <Form.Control id='language' value={getLocale()} onChange={(e)=>{handleChange(e)}}  name={intl.formatMessage(messages.language)}  as="select" floatingLabel={intl.formatMessage(messages.language)}>
+                      <Form.Control id='language' value={getLocale()} onChange={(e)=>{handleChange(e)}}  name={intl.formatMessage(messages["language"])}  as="select" floatingLabel={intl.formatMessage(messages["language"])}>
                       
                     { siteLanguageList.map(({ code, name }) => (<option  value={code}>{name}</option>))}
                         </Form.Control>
                         </Form.Group>
+                      <div className='ml-3'>
+                    {this.renderUserMenu()}
+                    </div>
+
                   </>
                 ) : this.renderLoggedOutItems()}
             </nav>

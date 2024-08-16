@@ -15,13 +15,7 @@ var Logo = function Logo(_ref) {
   }, /*#__PURE__*/React.createElement("img", _extends({
     src: src,
     alt: alt
-  }, attributes)), userDomain && /*#__PURE__*/React.createElement("img", {
-    className: "logo ml-2",
-    onError: function onError(i) {
-      return i.target.src = '';
-    },
-    src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png")
-  }));
+  }, attributes)));
 };
 Logo.propTypes = {
   src: PropTypes.string.isRequired,
@@ -41,12 +35,6 @@ var LinkedLogo = function LinkedLogo(_ref2) {
     className: "logo",
     src: src,
     alt: alt
-  }), userDomain && /*#__PURE__*/React.createElement("img", {
-    className: "logo ml-2",
-    onError: function onError(i) {
-      return i.target.src = '';
-    },
-    src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png")
   }));
 };
 LinkedLogo.propTypes = {

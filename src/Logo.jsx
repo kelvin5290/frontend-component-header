@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 const Logo = ({ src, alt, userDomain, ...attributes }) => (
   <div  className="d-flex flex-row"> 
   <img src={src} alt={alt} {...attributes} />
-  {userDomain && (
+  {/* {userDomain && (
     <img
       className="logo ml-2"
       onError={i => i.target.src=''}
       src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
     />
-  )}
+  )} */}
 </div>
 );
 
@@ -28,13 +28,13 @@ const LinkedLogo = ({
 }) => (
   <a href={href} {...attributes} className="d-flex flex-row">
     <img className="logo" src={src} alt={alt} />
-    {userDomain && (
+    {/* {userDomain && (
     <img
       className="logo ml-2"
       onError={i => i.target.src=''}
       src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
     />
-  )}
+  )} */}
   </a>
   
 );

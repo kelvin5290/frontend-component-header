@@ -222,6 +222,24 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
         userDomain: userDomain
       }, logoProps, {
         itemType: "http://schema.org/Organization"
+      }))), /*#__PURE__*/React.createElement(Form.Group, {
+        controlId: "language",
+        className: "mt-3"
+      }, /*#__PURE__*/React.createElement(Form.Control, {
+        id: "language",
+        value: getLocale(),
+        onChange: function onChange(e) {
+          handleChange(e);
+        },
+        name: intl.formatMessage(messages["language"]),
+        as: "select",
+        floatingLabel: intl.formatMessage(messages["language"])
+      }, siteLanguageList.map(function (_ref4) {
+        var code = _ref4.code,
+          name = _ref4.name;
+        return /*#__PURE__*/React.createElement("option", {
+          value: code
+        }, name);
       }))), userMenu.length > 0 || loggedOutItems.length > 0 ? /*#__PURE__*/React.createElement("div", {
         className: "w-100 d-flex justify-content-end align-items-center"
       }, /*#__PURE__*/React.createElement(Menu, {
@@ -240,25 +258,7 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/React.createElement(MenuContent, {
         tag: "ul",
         className: "nav flex-column pin-left pin-right border-top shadow py-2"
-      }, loggedIn ? this.renderUserMenuItems() : this.renderLoggedOutItems()))) : null, /*#__PURE__*/React.createElement(Form.Group, {
-        controlId: "language",
-        className: "mt-3"
-      }, /*#__PURE__*/React.createElement(Form.Control, {
-        id: "language",
-        value: getLocale(),
-        onChange: function onChange(e) {
-          handleChange(e);
-        },
-        name: intl.formatMessage(messages["language"]),
-        as: "select",
-        floatingLabel: intl.formatMessage(messages["language"])
-      }, siteLanguageList.map(function (_ref4) {
-        var code = _ref4.code,
-          name = _ref4.name;
-        return /*#__PURE__*/React.createElement("option", {
-          value: code
-        }, name);
-      }))));
+      }, loggedIn ? this.renderUserMenuItems() : this.renderLoggedOutItems()))) : null);
     }
   }]);
 }(React.Component);
