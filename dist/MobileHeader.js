@@ -33,7 +33,7 @@ import { MenuIcon } from './Icons';
 import { getLocale, handleRtl, LOCALE_CHANGED } from '@edx/frontend-platform/i18n';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { convertKeyNames, snakeCaseObject } from '@edx/frontend-platform/utils';
-import siteLanguageList from 'site-language/constants';
+import siteLanguageList from './site-language/constants';
 var MobileHeader = /*#__PURE__*/function (_React$Component) {
   function MobileHeader(props) {
     _classCallCheck(this, MobileHeader);
