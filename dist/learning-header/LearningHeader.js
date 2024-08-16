@@ -33,12 +33,6 @@ var LinkedLogo = function LinkedLogo(_ref) {
     className: "logo d-block",
     src: src,
     alt: alt
-  }), userDomain && /*#__PURE__*/React.createElement("img", {
-    onError: function onError(i) {
-      return i.target.src = '';
-    },
-    className: "logo ml-2",
-    src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png")
   }));
 };
 LinkedLogo.propTypes = {
@@ -132,7 +126,7 @@ var LearningHeader = function LearningHeader(_ref3) {
       lineHeight: 1
     }
   }, /*#__PURE__*/React.createElement("span", {
-    className: "d-block m-0 font-weight-bold course-title"
+    className: "d-none d-md-block d-lg-block m-0 font-weight-bold course-title"
   }, courseTitle)), /*#__PURE__*/React.createElement(Form.Group, {
     controlId: "language",
     className: "mt-3"

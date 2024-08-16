@@ -22,13 +22,13 @@ const LinkedLogo = ({
 }) => (
   <a href={href} className="d-flex flex-row" >
     <img className="logo d-block" src={src} alt={alt} />
-    {userDomain && (
+    {/* {userDomain && (
     <img
       onError={i => i.target.src=''}
       className="logo ml-2"
       src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
     />
-  )}
+  )} */}
   </a>
   
 );
@@ -90,7 +90,7 @@ const LearningHeader = ({
         {headerLogo}
         <div className="flex-grow-1 course-title-lockup" style={{ lineHeight: 1 }}>
           {/* <span className="d-block small m-0">{courseOrg}</span> */}
-          <span className="d-block m-0 font-weight-bold course-title">{courseTitle}</span>
+          <span className="d-none d-md-block d-lg-block m-0 font-weight-bold course-title">{courseTitle}</span>
         </div>
         <Form.Group controlId="language" className='mt-3'>
         <Form.Control id='language' value={getLocale()} onChange={(e)=>{handleChange(e)}}  name={intl.formatMessage(messages.language)}  as="select" floatingLabel={intl.formatMessage(messages.language)}>
