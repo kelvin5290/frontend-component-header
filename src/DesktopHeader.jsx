@@ -10,7 +10,7 @@ import { LinkedLogo, Logo } from './Logo';
 import { getLocale, handleRtl, LOCALE_CHANGED } from '@edx/frontend-platform/i18n';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { convertKeyNames, snakeCaseObject } from '@edx/frontend-platform/utils';
-import siteLanguageList from '../site-language/constants'
+import siteLanguageList from 'site-language/constants'
 // i18n
 import messages from './Header.messages';
 
