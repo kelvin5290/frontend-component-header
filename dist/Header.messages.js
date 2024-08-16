@@ -109,6 +109,11 @@ var messages = defineMessages({
     id: 'header.label.app.nav',
     defaultMessage: 'App',
     description: 'The aria label for the app Nav'
+  },
+  "language": {
+    id: 'header.menu.language',
+    defaultMessage: 'Language',
+    description: 'The label for the user menu Sign Out action.'
   }
 });
 export default messages;

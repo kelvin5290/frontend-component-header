@@ -19,7 +19,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { getConfig } from '@edx/frontend-platform';
-
+import { Form } from '@openedx/paragon';
 // Local Components
 import { Menu, MenuTrigger, MenuContent } from './Menu';
 import Avatar from './Avatar';
@@ -249,9 +249,9 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
         onChange: function onChange(e) {
           handleChange(e);
         },
-        name: intl.formatMessage(messages.language),
+        name: intl.formatMessage(messages["language"]),
         as: "select",
-        floatingLabel: intl.formatMessage(messages.language)
+        floatingLabel: intl.formatMessage(messages["language"])
       }, siteLanguageList.map(function (_ref4) {
         var code = _ref4.code,
           name = _ref4.name;

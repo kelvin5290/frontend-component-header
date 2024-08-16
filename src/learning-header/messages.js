@@ -37,7 +37,7 @@ const messages = defineMessages({
     description: 'The label for the user menu Sign Out action.',
   },
   language: {
-    id: 'language',
+    id: 'header.menu.language',
     defaultMessage: 'Language',
     description: 'The label for the user menu Sign Out action.',
   },

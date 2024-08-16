@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { getConfig } from '@edx/frontend-platform';
-
+import { Form } from '@openedx/paragon';
 // Local Components
 import { Menu, MenuTrigger, MenuContent } from './Menu';
 import Avatar from './Avatar';
@@ -188,7 +188,7 @@ class MobileHeader extends React.Component {
           </div>
         ) : null}
                             <Form.Group controlId="language" className='mt-3'>
-                      <Form.Control id='language' value={getLocale()} onChange={(e)=>{handleChange(e)}}  name={intl.formatMessage(messages.language)}  as="select" floatingLabel={intl.formatMessage(messages.language)}>
+                      <Form.Control id='language' value={getLocale()} onChange={(e)=>{handleChange(e)}}  name={intl.formatMessage(messages["language"])}  as="select" floatingLabel={intl.formatMessage(messages["language"])}>
                       
                     { siteLanguageList.map(({ code, name }) => (<option  value={code}>{name}</option>))}
                         </Form.Control>
