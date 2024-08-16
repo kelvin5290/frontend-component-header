@@ -7,7 +7,10 @@ import { getConfig } from '@edx/frontend-platform';
 import { Menu, MenuTrigger, MenuContent } from './Menu';
 import Avatar from './Avatar';
 import { LinkedLogo, Logo } from './Logo';
-
+import { getLocale, handleRtl, LOCALE_CHANGED } from '@edx/frontend-platform/i18n';
+import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
+import { convertKeyNames, snakeCaseObject } from '@edx/frontend-platform/utils';
+import siteLanguageList from '../site-language/constants'
 // i18n
 import messages from './Header.messages';
 
@@ -139,7 +142,15 @@ class DesktopHeader extends React.Component {
     } = this.props;
     const logoProps = { src: logo, alt: logoAltText, href: logoDestination };
     const logoClasses = getConfig().AUTHN_MINIMAL_HEADER ? 'mw-100' : null;
-
+    const handleChange = async (e) => {
+      e.preventDefault();
+      const requestConfig = { headers: { 'Content-Type': 'application/merge-patch+json' } };
+      const { username, userId } = getAuthenticatedUser();
+      let processedParams = snakeCaseObject({ prefLang: e.target.value });
+      processedParams = convertKeyNames(processedParams, {
+        pref_lang: 'pref-lang',
+      });
+    }
     return (
       <header className="site-header-desktop">
         <a className="nav-skip sr-only sr-only-focusable" href="#main">{intl.formatMessage(messages['header.label.skip.nav'])}</a>
@@ -161,6 +172,12 @@ class DesktopHeader extends React.Component {
                   <>
                     {this.renderSecondaryMenu()}
                     {this.renderUserMenu()}
+                    <Form.Group controlId="language" className='mt-3'>
+                      <Form.Control id='language' value={getLocale()} onChange={(e)=>{handleChange(e)}}  name={intl.formatMessage(messages.language)}  as="select" floatingLabel={intl.formatMessage(messages.language)}>
+                      
+                    { siteLanguageList.map(({ code, name }) => (<option  value={code}>{name}</option>))}
+                        </Form.Control>
+                        </Form.Group>
                   </>
                 ) : this.renderLoggedOutItems()}
             </nav>

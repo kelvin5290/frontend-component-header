@@ -13,7 +13,10 @@ import messages from './Header.messages';
 
 // Assets
 import { MenuIcon } from './Icons';
-
+import { getLocale, handleRtl, LOCALE_CHANGED } from '@edx/frontend-platform/i18n';
+import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
+import { convertKeyNames, snakeCaseObject } from '@edx/frontend-platform/utils';
+import siteLanguageList from '../site-language/constants'
 class MobileHeader extends React.Component {
   constructor(props) { // eslint-disable-line no-useless-constructor
     super(props);
@@ -125,6 +128,15 @@ class MobileHeader extends React.Component {
     const stickyClassName = stickyOnMobile ? 'sticky-top' : '';
     const logoClasses = getConfig().AUTHN_MINIMAL_HEADER ? 'justify-content-left pl-3' : 'justify-content-center';
     const userDomain = username.split('@')[1].replace(".", '_')
+    const handleChange = async (e) => {
+      e.preventDefault();
+      const requestConfig = { headers: { 'Content-Type': 'application/merge-patch+json' } };
+      const { username, userId } = getAuthenticatedUser();
+      let processedParams = snakeCaseObject({ prefLang: e.target.value });
+      processedParams = convertKeyNames(processedParams, {
+        pref_lang: 'pref-lang',
+      });
+    }
     return (
       <header
         aria-label={intl.formatMessage(messages['header.label.main.header'])}
@@ -150,6 +162,7 @@ class MobileHeader extends React.Component {
               >
                 {this.renderMainMenu()}
                 {this.renderSecondaryMenu()}
+                
               </MenuContent>
             </Menu>
           </div>
@@ -174,6 +187,12 @@ class MobileHeader extends React.Component {
             </Menu>
           </div>
         ) : null}
+                            <Form.Group controlId="language" className='mt-3'>
+                      <Form.Control id='language' value={getLocale()} onChange={(e)=>{handleChange(e)}}  name={intl.formatMessage(messages.language)}  as="select" floatingLabel={intl.formatMessage(messages.language)}>
+                      
+                    { siteLanguageList.map(({ code, name }) => (<option  value={code}>{name}</option>))}
+                        </Form.Control>
+                        </Form.Group>
       </header>
     );
   }
