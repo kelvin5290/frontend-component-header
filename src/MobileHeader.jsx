@@ -144,7 +144,7 @@ class MobileHeader extends React.Component {
       >
         <a className="nav-skip sr-only sr-only-focusable" href="#main">{intl.formatMessage(messages['header.label.skip.nav'])}</a>
         {mainMenu.length > 0 ? (
-          <div className="w-100 d-flex justify-content-start">
+          <div className="d-flex justify-content-start">
 
             <Menu className="position-static">
               <MenuTrigger
@@ -170,14 +170,15 @@ class MobileHeader extends React.Component {
         <div className={`w-100 d-flex ${logoClasses}`}>
           { logoDestination === null ? <Logo className="logo" src={logo} userDomain={userDomain} alt={logoAltText} /> : <LinkedLogo className="logo" userDomain={userDomain} {...logoProps} itemType="http://schema.org/Organization" />}
         </div>
-        <Form.Group controlId="language" className='mt-3'>
+       
+        {userMenu.length > 0 || loggedOutItems.length > 0 ? (
+          <div className="w-100 d-flex justify-content-end align-items-center">
+             <Form.Group controlId="language" className='mt-3'>
                       <Form.Control id='language' value={getLocale()} onChange={(e)=>{handleChange(e)}}  name={intl.formatMessage(messages["language"])}  as="select" floatingLabel={intl.formatMessage(messages["language"])}>
                       
                     { siteLanguageList.map(({ code, name }) => (<option  value={code}>{name}</option>))}
                         </Form.Control>
                         </Form.Group>
-        {userMenu.length > 0 || loggedOutItems.length > 0 ? (
-          <div className="w-100 d-flex justify-content-end align-items-center">
             <Menu tag="nav" aria-label={intl.formatMessage(messages['header.label.secondary.nav'])} className="position-static">
               <MenuTrigger
                 tag="button"

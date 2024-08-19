@@ -190,7 +190,7 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
         className: "nav-skip sr-only sr-only-focusable",
         href: "#main"
       }, intl.formatMessage(messages['header.label.skip.nav'])), mainMenu.length > 0 ? /*#__PURE__*/React.createElement("div", {
-        className: "w-100 d-flex justify-content-start"
+        className: "d-flex justify-content-start"
       }, /*#__PURE__*/React.createElement(Menu, {
         className: "position-static"
       }, /*#__PURE__*/React.createElement(MenuTrigger, {
@@ -222,7 +222,9 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
         userDomain: userDomain
       }, logoProps, {
         itemType: "http://schema.org/Organization"
-      }))), /*#__PURE__*/React.createElement(Form.Group, {
+      }))), userMenu.length > 0 || loggedOutItems.length > 0 ? /*#__PURE__*/React.createElement("div", {
+        className: "w-100 d-flex justify-content-end align-items-center"
+      }, /*#__PURE__*/React.createElement(Form.Group, {
         controlId: "language",
         className: "mt-3"
       }, /*#__PURE__*/React.createElement(Form.Control, {
@@ -240,9 +242,7 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/React.createElement("option", {
           value: code
         }, name);
-      }))), userMenu.length > 0 || loggedOutItems.length > 0 ? /*#__PURE__*/React.createElement("div", {
-        className: "w-100 d-flex justify-content-end align-items-center"
-      }, /*#__PURE__*/React.createElement(Menu, {
+      }))), /*#__PURE__*/React.createElement(Menu, {
         tag: "nav",
         "aria-label": intl.formatMessage(messages['header.label.secondary.nav']),
         className: "position-static"
