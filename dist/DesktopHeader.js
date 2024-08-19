@@ -33,6 +33,7 @@ import messages from './Header.messages';
 import { Form } from '@openedx/paragon';
 // Assets
 import { CaretIcon } from './Icons';
+import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 var DesktopHeader = /*#__PURE__*/function (_React$Component) {
   function DesktopHeader(props) {
     _classCallCheck(this, DesktopHeader);
@@ -181,7 +182,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
       var logoClasses = getConfig().AUTHN_MINIMAL_HEADER ? 'mw-100' : null;
       var handleChange = /*#__PURE__*/function () {
         var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
-          var requestConfig, _getAuthenticatedUser, username, userId, processedParams;
+          var requestConfig, _getAuthenticatedUser, username, userId, processedParams, formData;
           return _regeneratorRuntime().wrap(function _callee$(_context) {
             while (1) switch (_context.prev = _context.next) {
               case 0:
@@ -198,11 +199,38 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
                 processedParams = convertKeyNames(processedParams, {
                   pref_lang: 'pref-lang'
                 });
-              case 5:
+                _context.next = 7;
+                return getAuthenticatedHttpClient().patch("".concat(getConfig().LMS_BASE_URL, "/api/user/v1/preferences/").concat(username), processedParams, {
+                  headers: {
+                    'Content-Type': 'application/merge-patch+json'
+                  }
+                });
+              case 7:
+                formData = new FormData();
+                formData.append('language', e.target.value);
+                _context.prev = 9;
+                _context.next = 12;
+                return getAuthenticatedHttpClient().post("".concat(getConfig().LMS_BASE_URL, "/i18n/setlang/"), formData, {
+                  headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                  }
+                })["catch"]();
+              case 12:
+                _context.next = 17;
+                break;
+              case 14:
+                _context.prev = 14;
+                _context.t0 = _context["catch"](9);
+                console.log(_context.t0);
+              case 17:
+                publish(LOCALE_CHANGED, e.target.value);
+                handleRtl();
+                location.reload();
+              case 20:
               case "end":
                 return _context.stop();
             }
-          }, _callee);
+          }, _callee, null, [[9, 14]]);
         }));
         return function handleChange(_x) {
           return _ref2.apply(this, arguments);

@@ -17,6 +17,7 @@ import { getLocale, handleRtl, LOCALE_CHANGED } from '@edx/frontend-platform/i18
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { convertKeyNames, snakeCaseObject } from '@edx/frontend-platform/utils';
 import siteLanguageList from './site-language/constants'
+import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 class MobileHeader extends React.Component {
   constructor(props) { // eslint-disable-line no-useless-constructor
     super(props);
@@ -136,7 +137,26 @@ class MobileHeader extends React.Component {
       processedParams = convertKeyNames(processedParams, {
         pref_lang: 'pref-lang',
       });
-    }
+    
+      await getAuthenticatedHttpClient()
+        .patch(`${getConfig().LMS_BASE_URL}/api/user/v1/preferences/${username}`, processedParams, {
+          headers: { 'Content-Type': 'application/merge-patch+json' },
+        });
+        
+      const formData = new FormData();
+      formData.append('language', e.target.value);
+      try {
+        await getAuthenticatedHttpClient()
+          .post(`${getConfig().LMS_BASE_URL}/i18n/setlang/`, formData, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' },
+          }).catch();
+         } catch (e) {
+            console.log(e)
+          }
+        publish(LOCALE_CHANGED, e.target.value);
+        handleRtl();
+        location.reload()
+    };
     return (
       <header
         aria-label={intl.formatMessage(messages['header.label.main.header'])}

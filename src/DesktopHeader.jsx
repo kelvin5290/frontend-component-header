@@ -16,7 +16,7 @@ import messages from './Header.messages';
 import { Form } from '@openedx/paragon';
 // Assets
 import { CaretIcon } from './Icons';
-
+import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 class DesktopHeader extends React.Component {
   constructor(props) { // eslint-disable-line no-useless-constructor
     super(props);
@@ -150,7 +150,26 @@ class DesktopHeader extends React.Component {
       processedParams = convertKeyNames(processedParams, {
         pref_lang: 'pref-lang',
       });
-    }
+    
+      await getAuthenticatedHttpClient()
+        .patch(`${getConfig().LMS_BASE_URL}/api/user/v1/preferences/${username}`, processedParams, {
+          headers: { 'Content-Type': 'application/merge-patch+json' },
+        });
+        
+      const formData = new FormData();
+      formData.append('language', e.target.value);
+      try {
+        await getAuthenticatedHttpClient()
+          .post(`${getConfig().LMS_BASE_URL}/i18n/setlang/`, formData, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' },
+          }).catch();
+         } catch (e) {
+            console.log(e)
+          }
+        publish(LOCALE_CHANGED, e.target.value);
+        handleRtl();
+        location.reload()
+    };
     return (
       <header className="site-header-desktop">
         <a className="nav-skip sr-only sr-only-focusable" href="#main">{intl.formatMessage(messages['header.label.skip.nav'])}</a>
