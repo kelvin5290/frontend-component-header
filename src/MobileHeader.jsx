@@ -18,6 +18,7 @@ import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { convertKeyNames, snakeCaseObject } from '@edx/frontend-platform/utils';
 import siteLanguageList from './site-language/constants'
 import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
+import { publish } from '@edx/frontend-platform';
 class MobileHeader extends React.Component {
   constructor(props) { // eslint-disable-line no-useless-constructor
     super(props);

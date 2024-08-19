@@ -35,6 +35,7 @@ import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { convertKeyNames, snakeCaseObject } from '@edx/frontend-platform/utils';
 import siteLanguageList from './site-language/constants';
 import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
+import { publish } from '@edx/frontend-platform';
 var MobileHeader = /*#__PURE__*/function (_React$Component) {
   function MobileHeader(props) {
     _classCallCheck(this, MobileHeader);

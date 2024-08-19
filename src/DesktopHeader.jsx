@@ -17,6 +17,7 @@ import { Form } from '@openedx/paragon';
 // Assets
 import { CaretIcon } from './Icons';
 import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
+import { publish } from '@edx/frontend-platform';
 class DesktopHeader extends React.Component {
   constructor(props) { // eslint-disable-line no-useless-constructor
     super(props);

@@ -34,6 +34,7 @@ import { Form } from '@openedx/paragon';
 // Assets
 import { CaretIcon } from './Icons';
 import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
+import { publish } from '@edx/frontend-platform';
 var DesktopHeader = /*#__PURE__*/function (_React$Component) {
   function DesktopHeader(props) {
     _classCallCheck(this, DesktopHeader);
