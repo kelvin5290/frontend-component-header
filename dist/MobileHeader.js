@@ -214,7 +214,7 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
       }();
       return /*#__PURE__*/React.createElement("header", {
         "aria-label": intl.formatMessage(messages['header.label.main.header']),
-        className: "d-flex justify-content-between align-items-center shadow ".concat(stickyClassName)
+        className: "d-flex justify-content-between align-items-center shadow site-header-white ".concat(stickyClassName)
       }, /*#__PURE__*/React.createElement("a", {
         className: "nav-skip sr-only sr-only-focusable",
         href: "#main"
