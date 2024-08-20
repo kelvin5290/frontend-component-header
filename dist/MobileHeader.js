@@ -214,7 +214,7 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
       }();
       return /*#__PURE__*/React.createElement("header", {
         "aria-label": intl.formatMessage(messages['header.label.main.header']),
-        className: "site-header-mobile d-flex justify-content-between align-items-center shadow ".concat(stickyClassName)
+        className: "d-flex justify-content-between align-items-center shadow ".concat(stickyClassName)
       }, /*#__PURE__*/React.createElement("a", {
         className: "nav-skip sr-only sr-only-focusable",
         href: "#main"
@@ -274,10 +274,10 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
       }))), /*#__PURE__*/React.createElement(Menu, {
         tag: "nav",
         "aria-label": intl.formatMessage(messages['header.label.secondary.nav']),
-        className: "position-static"
+        className: "position-static ml-3"
       }, /*#__PURE__*/React.createElement(MenuTrigger, {
         tag: "button",
-        className: "icon-button",
+        className: "dropdown-toggle btn btn-outline-primary d-inline-flex align-items-center pl-2 pr-3",
         "aria-label": intl.formatMessage(messages['header.label.account.menu']),
         title: intl.formatMessage(messages['header.label.account.menu'])
       }, /*#__PURE__*/React.createElement(Avatar, {

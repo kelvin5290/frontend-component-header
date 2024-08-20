@@ -161,7 +161,7 @@ class MobileHeader extends React.Component {
     return (
       <header
         aria-label={intl.formatMessage(messages['header.label.main.header'])}
-        className={`site-header-mobile d-flex justify-content-between align-items-center shadow ${stickyClassName}`}
+        className={`d-flex justify-content-between align-items-center shadow ${stickyClassName}`}
       >
         <a className="nav-skip sr-only sr-only-focusable" href="#main">{intl.formatMessage(messages['header.label.skip.nav'])}</a>
         {mainMenu.length > 0 ? (
@@ -200,10 +200,10 @@ class MobileHeader extends React.Component {
                     { siteLanguageList.map(({ code, name }) => (<option  value={code}>{name}</option>))}
                         </Form.Control>
                         </Form.Group>
-            <Menu tag="nav" aria-label={intl.formatMessage(messages['header.label.secondary.nav'])} className="position-static">
+            <Menu tag="nav" aria-label={intl.formatMessage(messages['header.label.secondary.nav'])} className="position-static ml-3">
               <MenuTrigger
                 tag="button"
-                className="icon-button"
+                className="dropdown-toggle btn btn-outline-primary d-inline-flex align-items-center pl-2 pr-3"
                 aria-label={intl.formatMessage(messages['header.label.account.menu'])}
                 title={intl.formatMessage(messages['header.label.account.menu'])}
               >
