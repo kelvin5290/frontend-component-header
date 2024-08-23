@@ -22,13 +22,13 @@ const LinkedLogo = ({
 }) => (
   <a href={href} className="d-flex flex-row" >
     <img className="logo d-block" src={src} alt={alt} />
-    {/* {userDomain && (
+    {userDomain && (
     <img
-      onError={i => i.target.src=''}
+      onError={i => {i.target.src='';i.className='';i.style.display='none';}}
       className="logo ml-2"
       src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
     />
-  )} */}
+  )}
   </a>
   
 );

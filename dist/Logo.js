@@ -35,6 +35,14 @@ var LinkedLogo = function LinkedLogo(_ref2) {
     className: "logo",
     src: src,
     alt: alt
+  }), userDomain && /*#__PURE__*/React.createElement("img", {
+    className: "logo ml-2",
+    onError: function onError(i) {
+      i.target.src = '';
+      i.className = '';
+      i.style.display = 'none';
+    },
+    src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png")
   }));
 };
 LinkedLogo.propTypes = {
