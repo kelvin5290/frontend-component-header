@@ -72,7 +72,7 @@ const LearningHeader = ({
   courseOrg, courseNumber, courseTitle, intl, showUserDropdown,
 }) => {
   const { authenticatedUser } = useContext(AppContext);
-  const userDomain = authenticatedUser.email.split('@')[1].replace(".", '_')
+  const userDomain = authenticatedUser.email.split('@')[1].replaceAll(".", '_')
   const headerLogo = (
     <LinkedLogo
       className="logo"

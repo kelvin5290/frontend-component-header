@@ -129,7 +129,7 @@ class MobileHeader extends React.Component {
     const logoProps = { src: logo, alt: logoAltText, href: logoDestination };
     const stickyClassName = stickyOnMobile ? 'sticky-top' : '';
     const logoClasses = getConfig().AUTHN_MINIMAL_HEADER ? 'justify-content-left pl-3' : 'justify-content-center';
-    const userDomain = username.split('@')[1].replace(".", '_')
+    const userDomain = username.split('@')[1].replaceAll(".", '_')
     const handleChange = async (e) => {
       e.preventDefault();
       const requestConfig = { headers: { 'Content-Type': 'application/merge-patch+json' } };
