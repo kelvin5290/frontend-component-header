@@ -40,7 +40,6 @@ var LinkedLogo = function LinkedLogo(_ref2) {
     onError: function onError(i) {
       i.target.src = '';
       i.className = '';
-      i.style.display = 'none';
     },
     src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png")
   }));

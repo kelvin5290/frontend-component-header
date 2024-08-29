@@ -147,7 +147,9 @@ class DesktopHeader extends React.Component {
       e.preventDefault();
       const requestConfig = { headers: { 'Content-Type': 'application/merge-patch+json' } };
       const { username, userId } = getAuthenticatedUser();
-      const userDomain = username.split('@')[1].replaceAll(".", '_')
+      let userDomain = "";
+      if (username !== undefined)
+        userDomain = username.split('@')[1].replaceAll(".", '_')
       let processedParams = snakeCaseObject({ prefLang: e.target.value });
       processedParams = convertKeyNames(processedParams, {
         pref_lang: 'pref-lang',

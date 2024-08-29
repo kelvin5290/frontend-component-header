@@ -194,45 +194,46 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
                   }
                 };
                 _getAuthenticatedUser = getAuthenticatedUser(), username = _getAuthenticatedUser.username, userId = _getAuthenticatedUser.userId;
-                userDomain = username.split('@')[1].replaceAll(".", '_');
+                userDomain = "";
+                if (username !== undefined) userDomain = username.split('@')[1].replaceAll(".", '_');
                 processedParams = snakeCaseObject({
                   prefLang: e.target.value
                 });
                 processedParams = convertKeyNames(processedParams, {
                   pref_lang: 'pref-lang'
                 });
-                _context.next = 8;
+                _context.next = 9;
                 return getAuthenticatedHttpClient().patch("".concat(getConfig().LMS_BASE_URL, "/api/user/v1/preferences/").concat(username), processedParams, {
                   headers: {
                     'Content-Type': 'application/merge-patch+json'
                   }
                 });
-              case 8:
+              case 9:
                 formData = new FormData();
                 formData.append('language', e.target.value);
-                _context.prev = 10;
-                _context.next = 13;
+                _context.prev = 11;
+                _context.next = 14;
                 return getAuthenticatedHttpClient().post("".concat(getConfig().LMS_BASE_URL, "/i18n/setlang/"), formData, {
                   headers: {
                     'X-Requested-With': 'XMLHttpRequest'
                   }
                 })["catch"]();
-              case 13:
-                _context.next = 18;
+              case 14:
+                _context.next = 19;
                 break;
-              case 15:
-                _context.prev = 15;
-                _context.t0 = _context["catch"](10);
+              case 16:
+                _context.prev = 16;
+                _context.t0 = _context["catch"](11);
                 console.log(_context.t0);
-              case 18:
+              case 19:
                 publish(LOCALE_CHANGED, e.target.value);
                 handleRtl();
                 location.reload();
-              case 21:
+              case 22:
               case "end":
                 return _context.stop();
             }
-          }, _callee, null, [[10, 15]]);
+          }, _callee, null, [[11, 16]]);
         }));
         return function handleChange(_x) {
           return _ref2.apply(this, arguments);

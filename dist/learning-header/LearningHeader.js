@@ -37,7 +37,6 @@ var LinkedLogo = function LinkedLogo(_ref) {
     onError: function onError(i) {
       i.target.src = '';
       i.className = '';
-      i.style.display = 'none';
     },
     className: "logo ml-2",
     src: "https://d2ttnbhfjsw4ca.cloudfront.net/".concat(userDomain, ".png")

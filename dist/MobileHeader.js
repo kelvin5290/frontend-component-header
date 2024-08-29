@@ -155,7 +155,8 @@ var MobileHeader = /*#__PURE__*/function (_React$Component) {
       };
       var stickyClassName = stickyOnMobile ? 'sticky-top' : '';
       var logoClasses = getConfig().AUTHN_MINIMAL_HEADER ? 'justify-content-left pl-3' : 'justify-content-center';
-      var userDomain = username.split('@')[1].replaceAll(".", '_');
+      var userDomain = "";
+      if (username !== undefined) userDomain = username.split('@')[1].replaceAll(".", '_');
       var handleChange = /*#__PURE__*/function () {
         var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
           var requestConfig, _getAuthenticatedUser, username, userId, processedParams, formData;

@@ -24,7 +24,7 @@ const LinkedLogo = ({
     <img className="logo d-block" src={src} alt={alt} />
     {userDomain && (
     <img
-      onError={i => {i.target.src='';i.className='';i.style.display='none';}}
+      onError={i => {i.target.src='';i.className='';}}
       className="logo ml-2"
       src={`https://d2ttnbhfjsw4ca.cloudfront.net/${userDomain}.png`}
     />
