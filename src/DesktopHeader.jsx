@@ -139,6 +139,7 @@ class DesktopHeader extends React.Component {
       logoAltText,
       logoDestination,
       loggedIn,
+      username,
       intl,
     } = this.props;
     const logoProps = { src: logo, alt: logoAltText, href: logoDestination };
@@ -146,7 +147,7 @@ class DesktopHeader extends React.Component {
     const handleChange = async (e) => {
       e.preventDefault();
       const requestConfig = { headers: { 'Content-Type': 'application/merge-patch+json' } };
-      const { username, userId } = getAuthenticatedUser();
+      // const { username, userId } = getAuthenticatedUser();
       let userDomain = "";
       if (username !== undefined)
         userDomain = username.split('@')[1].replaceAll(".", '_')

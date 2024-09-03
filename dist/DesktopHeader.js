@@ -174,6 +174,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
         logoAltText = _this$props2.logoAltText,
         logoDestination = _this$props2.logoDestination,
         loggedIn = _this$props2.loggedIn,
+        username = _this$props2.username,
         intl = _this$props2.intl;
       var logoProps = {
         src: logo,
@@ -183,7 +184,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
       var logoClasses = getConfig().AUTHN_MINIMAL_HEADER ? 'mw-100' : null;
       var handleChange = /*#__PURE__*/function () {
         var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
-          var requestConfig, _getAuthenticatedUser, username, userId, userDomain, processedParams, formData;
+          var requestConfig, userDomain, processedParams, formData;
           return _regeneratorRuntime().wrap(function _callee$(_context) {
             while (1) switch (_context.prev = _context.next) {
               case 0:
@@ -192,8 +193,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
                   headers: {
                     'Content-Type': 'application/merge-patch+json'
                   }
-                };
-                _getAuthenticatedUser = getAuthenticatedUser(), username = _getAuthenticatedUser.username, userId = _getAuthenticatedUser.userId;
+                }; // const { username, userId } = getAuthenticatedUser();
                 userDomain = "";
                 if (username !== undefined) userDomain = username.split('@')[1].replaceAll(".", '_');
                 processedParams = snakeCaseObject({
@@ -202,38 +202,38 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
                 processedParams = convertKeyNames(processedParams, {
                   pref_lang: 'pref-lang'
                 });
-                _context.next = 9;
+                _context.next = 8;
                 return getAuthenticatedHttpClient().patch("".concat(getConfig().LMS_BASE_URL, "/api/user/v1/preferences/").concat(username), processedParams, {
                   headers: {
                     'Content-Type': 'application/merge-patch+json'
                   }
                 });
-              case 9:
+              case 8:
                 formData = new FormData();
                 formData.append('language', e.target.value);
-                _context.prev = 11;
-                _context.next = 14;
+                _context.prev = 10;
+                _context.next = 13;
                 return getAuthenticatedHttpClient().post("".concat(getConfig().LMS_BASE_URL, "/i18n/setlang/"), formData, {
                   headers: {
                     'X-Requested-With': 'XMLHttpRequest'
                   }
                 })["catch"]();
-              case 14:
-                _context.next = 19;
+              case 13:
+                _context.next = 18;
                 break;
-              case 16:
-                _context.prev = 16;
-                _context.t0 = _context["catch"](11);
+              case 15:
+                _context.prev = 15;
+                _context.t0 = _context["catch"](10);
                 console.log(_context.t0);
-              case 19:
+              case 18:
                 publish(LOCALE_CHANGED, e.target.value);
                 handleRtl();
                 location.reload();
-              case 22:
+              case 21:
               case "end":
                 return _context.stop();
             }
-          }, _callee, null, [[11, 16]]);
+          }, _callee, null, [[10, 15]]);
         }));
         return function handleChange(_x) {
           return _ref2.apply(this, arguments);
