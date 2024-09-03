@@ -147,7 +147,7 @@ class DesktopHeader extends React.Component {
     const handleChange = async (e) => {
       e.preventDefault();
       const requestConfig = { headers: { 'Content-Type': 'application/merge-patch+json' } };
-      // const { username, userId } = getAuthenticatedUser();
+      
       let userDomain = "";
       if (username !== undefined)
         userDomain = username.split('@')[1].replaceAll(".", '_')
@@ -155,7 +155,7 @@ class DesktopHeader extends React.Component {
       processedParams = convertKeyNames(processedParams, {
         pref_lang: 'pref-lang',
       });
-    
+      const { username, userId } = getAuthenticatedUser();
       await getAuthenticatedHttpClient()
         .patch(`${getConfig().LMS_BASE_URL}/api/user/v1/preferences/${username}`, processedParams, {
           headers: { 'Content-Type': 'application/merge-patch+json' },
