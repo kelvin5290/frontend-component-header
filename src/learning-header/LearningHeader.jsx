@@ -73,7 +73,7 @@ const LearningHeader = ({
 }) => {
   const { authenticatedUser } = useContext(AppContext);
   let userDomain = "";
-  if (authenticatedUser !== undefined)
+  if (authenticatedUser && authenticatedUser.email )
      userDomain = authenticatedUser.email.split('@')[1].replaceAll(".", '_')
   const headerLogo = (
     <LinkedLogo

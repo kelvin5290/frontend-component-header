@@ -112,7 +112,7 @@ var LearningHeader = function LearningHeader(_ref3) {
   var _useContext = useContext(AppContext),
     authenticatedUser = _useContext.authenticatedUser;
   var userDomain = "";
-  if (authenticatedUser !== undefined) userDomain = authenticatedUser.email.split('@')[1].replaceAll(".", '_');
+  if (authenticatedUser && authenticatedUser.email) userDomain = authenticatedUser.email.split('@')[1].replaceAll(".", '_');
   var headerLogo = /*#__PURE__*/React.createElement(LinkedLogo, {
     className: "logo",
     userDomain: userDomain,

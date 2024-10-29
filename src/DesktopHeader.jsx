@@ -149,7 +149,7 @@ class DesktopHeader extends React.Component {
       const requestConfig = { headers: { 'Content-Type': 'application/merge-patch+json' } };
       
       let userDomain = "";
-      if (username !== undefined)
+      if (username)
         userDomain = username.split('@')[1].replaceAll(".", '_')
       let processedParams = snakeCaseObject({ prefLang: e.target.value });
       processedParams = convertKeyNames(processedParams, {

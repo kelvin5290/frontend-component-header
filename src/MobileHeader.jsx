@@ -130,7 +130,7 @@ class MobileHeader extends React.Component {
     const stickyClassName = stickyOnMobile ? 'sticky-top' : '';
     const logoClasses = getConfig().AUTHN_MINIMAL_HEADER ? 'justify-content-left pl-3' : 'justify-content-center';
     let userDomain = "";
-    if (username !== undefined)
+    if (username)
       userDomain = username.split('@')[1].replaceAll(".", '_')
     const handleChange = async (e) => {
       e.preventDefault();

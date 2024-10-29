@@ -195,7 +195,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
                   }
                 };
                 userDomain = "";
-                if (username !== undefined) userDomain = username.split('@')[1].replaceAll(".", '_');
+                if (username) userDomain = username.split('@')[1].replaceAll(".", '_');
                 processedParams = snakeCaseObject({
                   prefLang: e.target.value
                 });
