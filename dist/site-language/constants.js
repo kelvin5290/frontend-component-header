@@ -10,6 +10,10 @@ var siteLanguageList = [{
   code: 'zh-hk',
   name: '中文 (繁體)',
   released: true
+}, {
+  code: 'th',
+  name: 'ไทย',
+  released: true
 }];
 export default siteLanguageList;
 //# sourceMappingURL=constants.js.map
