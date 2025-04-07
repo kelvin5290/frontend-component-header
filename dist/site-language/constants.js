@@ -14,6 +14,10 @@ var siteLanguageList = [{
   code: 'th',
   name: 'ไทย',
   released: true
+}, {
+  code: 'ms_MY',
+  name: 'Melayu',
+  released: true
 }];
 export default siteLanguageList;
 //# sourceMappingURL=constants.js.map
