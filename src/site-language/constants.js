@@ -20,7 +20,7 @@ const siteLanguageList = [
     released: true,
   },
   {
-    code: 'ms-MY',
+    code: 'ms-my',
     name: 'Melayu',
     released: true,
   },

@@ -15,7 +15,7 @@ var siteLanguageList = [{
   name: 'ไทย',
   released: true
 }, {
-  code: 'ms-MY',
+  code: 'ms-my',
   name: 'Melayu',
   released: true
 }];
