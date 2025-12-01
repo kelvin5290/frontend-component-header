@@ -21,7 +21,7 @@ const siteLanguageList = [
   },
   {
     code: 'ms-my',
-    name: 'Melayu',
+    name: 'Bahasa Melayu',
     released: true,
   },
 ];

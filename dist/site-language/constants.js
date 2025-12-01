@@ -16,7 +16,7 @@ var siteLanguageList = [{
   released: true
 }, {
   code: 'ms-my',
-  name: 'Melayu',
+  name: 'Bahasa Melayu',
   released: true
 }];
 export default siteLanguageList;
