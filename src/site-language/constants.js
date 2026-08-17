@@ -14,6 +14,11 @@ const siteLanguageList = [
     name: '中文 (繁體)',
     released: true,
   },
+    {
+    code: 'zh-tw',
+    name: '台式國語',
+    released: true,
+  },
   {
     code: 'th',
     name: 'ไทย',
@@ -22,6 +27,11 @@ const siteLanguageList = [
   {
     code: 'ms-my',
     name: 'Bahasa Melayu',
+    released: true,
+  },
+  {
+    code: 'vi',
+    name: 'Tiếng Việt',
     released: true,
   },
 ];
